@@ -4,6 +4,8 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
+    /* Break Point */
+    --breakpoint-xs: 30rem;
     /* Colors */
     /* Brown */
     --color-brown-100: #ECE0D1;
@@ -35,11 +37,6 @@
 @layer base {
     html {
         font-family: var(--font-vazir);
-    }
-
-    body {
-        background-image: url('../images/headerBgDesktop.webp');
-        background-repeat: no-repeat;
     }
 
     /* Thin */
@@ -144,6 +141,14 @@
 
 @utility overlay--visible {
     @apply opacity-100 visible
+}
+
+@utility bg-home-desktop {
+    background-image: url('../images/headerBgDesktop.webp');
+}
+
+@utility bg-home-mobile {
+    background-image: url('../images/headerBgMobile.webp');
 }
 
 @custom-variant child (& > *);
