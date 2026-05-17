@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tailwind-extras";
 
 @variant dark (&:where(.dark, .dark *));
 
@@ -127,6 +128,22 @@
 
 @utility tracking-tightest {
     letter-spacing: var(--tracking-tightest);
+}
+
+@utility submenu {
+    @apply hidden flex-col gap-y-3 mt-3 pr-7 text-sm;
+}
+
+@utility submenu--open {
+    @apply flex;
+}
+
+@utility overlay {
+    @apply fixed invisible opacity-0 inset-0 z-10 w-full h-full md:hidden bg-black/40 transition-all;
+}
+
+@utility overlay--visible {
+    @apply opacity-100 visible
 }
 
 @custom-variant child (& > *);

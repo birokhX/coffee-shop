@@ -134,7 +134,7 @@
         </symbol>
     </svg>
 
-    <!-- Header -->
+    <!-- App Header -->
     <header
         class="hidden fixed top-9 left-0 right-0 md:flex items-center gap-x-4 xl:gap-x-0 w-[98%] lg:w-[90%] h-24 mx-auto py-5 px-5 xl:px-10 backdrop-blur-[6px] bg-black/50 rounded-3xl">
         <div class="flex justify-between w-full">
@@ -284,17 +284,17 @@
         </div>
 
     </header>
-
     <!-- Mobile Nav -->
     <div class="flex md:hidden justify-between items-center h-14 px-4 bg-white dark:bg-zinc-700">
         <!-- Nav Icon -->
-        <div class="text-zinc-700 dark:text-white cursor-pointer">
+        <div class="bars-3 text-zinc-700 dark:text-white cursor-pointer">
             <svg class="w-6 h-6">
                 <use href="#bars-3"></use>
             </svg>
         </div>
         <!-- Nav Menu -->
-        <div class="fixed top-0 bottom-0 right-0 z-20 md:hidden w-64 min-h-screen pt-3 px-4 bg-white dark:bg-zinc-700 ">
+        <div
+            class="nav fixed top-0 bottom-0 -right-64 z-20 md:hidden w-64 min-h-screen pt-3 px-4 transition-all overflow-y-auto scroll-none bg-white dark:bg-zinc-700 ">
             <!-- Header/Logo & Logo Type & X Mark -->
             <div class="flex items-center justify-between mb-6 pb-5 border-b border-gray-100 dark:border-white/10">
                 <div class="flex items-center gap-x-3.5 text-orange-300">
@@ -308,9 +308,11 @@
                     </svg>
                 </div>
                 <!-- X Mark -->
-                <svg class="w-5 h-5 text-zinc-700 dark:text-white">
-                    <use href="#x-mark"></use>
-                </svg>
+                <div class="nav-close-btn">
+                    <svg class="w-5 h-5 text-zinc-700 dark:text-white">
+                        <use href="#x-mark"></use>
+                    </svg>
+                </div>
             </div>
 
             <div class="flex items-center pr-4 h-10 mb-4 bg-orange-200/20 text-orange-300 rounded-md">
@@ -327,40 +329,42 @@
                     <div class="flex justify-between items-center">
                         <!-- Shopping Cart -->
                         <a href="#" class="flex items-center gap-x-2">
-                            <svg class="w-5 h-5 dark:text-gray-400">
+                            <svg class="w-5 h-5">
                                 <use href="#shopping-cart"></use>
                             </svg>
                             <span>فروشگاه</span>
                         </a>
                         <!-- Chevron Down -->
-                        <span class="submenu-open-btn cursor-pointer">
-                            <svg class="w-5 h-5">
-                                <use href="#chevron-down"></use>
-                            </svg>
-                        </span>
+                        <div class="submenu-open-btn">
+                            <span class="cursor-pointer">
+                                <svg class="w-5 h-5">
+                                    <use href="#chevron-down"></use>
+                                </svg>
+                            </span>
+                        </div>
                     </div>
                     <!-- Submenu -->
-                    <ul class="submenu flex flex-col gap-y-3 mt-3 pr-7 text-sm">
-                        <li class="transition-all hover:list-disc hover:text-orange-300">
+                    <ul class="submenu">
+                        <li class="transition-all hover:list-disc hover:text-orange-300 hover:-translate-x-1">
                             <a href="#" class="block">قهوه ویژه</a>
                         </li>
-                        <li class="transition-all hover:list-disc hover:text-orange-300">
+                        <li class="transition-all hover:list-disc hover:text-orange-300 hover:-translate-x-1">
                             <a href="#" class="block">ویژه در سطح جهانی</a>
                         </li>
-                        <li class="transition-all hover:list-disc hover:text-orange-300">
+                        <li class="transition-all hover:list-disc hover:text-orange-300 hover:-translate-x-1">
                             <a href="#" class="block">قهوه درجه یک</a>
                         </li>
-                        <li class="transition-all hover:list-disc hover:text-orange-300">
+                        <li class="transition-all hover:list-disc hover:text-orange-300 hover:-translate-x-1">
                             <a href="#" class="block">ترکیبات تجاری</a>
                         </li>
-                        <li class="transition-all hover:list-disc hover:text-orange-300">
+                        <li class="transition-all hover:list-disc hover:text-orange-300 hover:-translate-x-1">
                             <a href="#" class="block">کپسول قهوه</a>
                         </li>
-                        <li class="transition-all hover:list-disc hover:text-orange-300">
+                        <li class="transition-all hover:list-disc hover:text-orange-300 hover:-translate-x-1">
                             <a href="#" class="block">قهوه زینو برزیلی</a>
                         </li>
                     </ul>
-                    
+
                 </li>
                 <li>
                     <a href="#" class="flex items-center gap-x-2">
@@ -397,7 +401,7 @@
             </ul>
             <!-- Footer -->
             <div
-                class="flex flex-col items-start gap-6 mt-6 pt-5 px-4 border-t border-gray-100 dark:border-white/10 text-base text-orange-300 ">
+                class="flex flex-col items-start gap-6 mt-6 py-5 px-4 border-t border-gray-100 dark:border-white/10 text-base text-orange-300 ">
                 <!-- Login/Singup -->
                 <a href="#" class="inline-flex items-center gap-x-2">
                     <svg class="w-5 h-5">
@@ -438,14 +442,78 @@
             </svg>
         </div>
         <!-- Shooping Cart -->
-        <div class="text-zinc-700 dark:text-white">
+        <div class="cart-open-btn text-zinc-700 dark:text-white">
             <svg class="w-6 h-6">
                 <use href="#shopping-cart"></use>
             </svg>
         </div>
+        <!-- Cart Menu -->
+        <div
+            class="cart flex flex-col fixed top-0 -left-64 bottom-0 w-64 min-h-screen pt-3 px-4 z-20 md:hidden transition-all overflow-y-auto scroll-none  bg-white dark:bg-zinc-700 ">
+            <!-- Cart Header -->
+            <div
+                class=" flex justify-between items-center pb-5 mb-6 border-b border-gray-100 dark:border-white/10 text-zinc-700 dark:text-white">
+                <!-- Cart Close Btn -->
+                <div class="cart-close-btn">
+                    <svg class="w-5 h-5">
+                        <use href="#x-mark"></use>
+                    </svg>
+                </div>
+                <span class="font-medium">سبد خرید</span>
+            </div>
+            <!-- Cart Body -->
+            <div class="child:mb-5 child:pb-5 child:border-b child:border-gray-100 dark:child:border-white/10">
+                <!-- Product -->
+                <div class="flex gap-x-1">
+                    <img src="./images/products/p1.png" alt="product 1" class="w-24 h-24">
+                    <div class="space-y-1.5">
+                        <h4 class="font-medium text-sm line-clamp-2 text-zinc-700 dark:text-white">
+                            قهوه اسپرسو بن مانو مدل پریسکا ۲۵۰ گرمی
+                        </h4>
+                        <div class="">
+                            <span class="text-xs text-teal-600 dark:text-emerald-500">۱۴۵.۰۰ تومان</span>
+                            <div class="text-zinc-700 dark:text-white">
+                                <span class="font-medium">۱۷۵,۰۰۰</span>
+                                <span class="text-xs">تومان</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product -->
+                <div class="flex gap-x-1">
+                    <img src="./images/products/p2.png" alt="product 2" class="w-24 h-24">
+                    <div class="space-y-1.5">
+                        <h4 class="font-medium text-sm line-clamp-2 text-zinc-700 dark:text-white">
+                            قهوه اسپرسو بن مانو مدل پریسکا ۲۵۰ گرمی
+                        </h4>
+                        <div class="text-zinc-700 dark:text-white">
+                            <span class="text-xs text-teal-600 dark:text-emerald-500">۱۴۵.۰۰ تومان</span>
+                            <div class="">
+                                <span class="font-medium">۱۷۵,۰۰۰</span>
+                                <span class="text-xs">تومان</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Footer -->
+            <div class="flex items-start gap-x-4 mt-auto mb-5">
+                <a href="#"
+                    class="flex items-center justify-center grow h-11 rounded-xl bg-teal-600 dark:bg-emerald-500 text-white">
+                    ثبت سفارش
+                </a>
+                <div class="">
+                    <span class="text-xs text-gray-300">مبلغ قابل پرداخت</span>
+                    <div class="text-zinc-700 dark:text-white">
+                        <span class="font-medium text-base">۳۵۰,۰۰۰</span>
+                        <span class="text-sm">تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class=" overlay fixed inset-0 z-10 w-full h-full md:hidden bg-black/40"></div>
+    <div class=" overlay"></div>
     <script src="./scripts/app.js"></script>
 </body>
 
