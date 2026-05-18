@@ -15,9 +15,13 @@
     </script>
 </head>
 
-<body class="bg-white dark:bg-zinc-700">
+<body class="bg-gray-100 dark:bg-zinc-800">
     <!-- All Apps SVG Icons  -->
     <svg class="hidden">
+        <!-- Curve -->
+        <symbol id="curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 22">
+            <path d="M50 0C69 0 81 22 100 22L0 22C18.75 22 31 0 50 0Z" fill="currentColor" />
+        </symbol>
         <!-- Logo -->
         <symbol id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 40" fill="currentColor">
             <path
@@ -136,7 +140,7 @@
 
     <!-- App Header -->
     <header
-        class="hidden fixed top-9 left-0 right-0 md:flex items-center gap-x-4 xl:gap-x-0 w-[98%] lg:w-[90%] h-24 mx-auto py-5 px-5 xl:px-10 backdrop-blur-[6px] bg-black/50 rounded-3xl">
+        class="hidden fixed top-9 left-0 right-0 z-50 md:flex items-center gap-x-4 xl:gap-x-0 w-[98%] lg:w-[90%] h-24 mx-auto py-5 px-5 xl:px-10 backdrop-blur-[6px] bg-black/50 rounded-3xl">
         <div class="flex justify-between w-full">
             <!-- Logo & Menu -->
             <nav class="flex items-center gap-x-5 xl:gap-x-9 h-14">
@@ -517,16 +521,39 @@
     <main>
         <!-- Home Section -->
         <section
-            class="home h-50 xs:h-auto bg-home-mobile xs:aspect-2/1 md:aspect-auto md:bg-home-desktop bg-cover bg-position-[center_top] bg-no-repeat">
-            <div class="container px-4 md:px-2.5 mx-auto h-full md:min-h-screen flex items-center justify-end">
+            class="relative home h-50 xs:h-auto bg-home-mobile xs:aspect-2/1 md:aspect-auto md:bg-home-desktop bg-cover bg-position-[center_top] bg-no-repeat">
+            <!-- Container -->
+            <div
+                class="relative container px-4 md:px-2.5 mx-auto h-full md:min-h-screen flex items-center justify-end overflow-hidden">
                 <div class="text-white ">
-                    <h2 class="mb-0.5 md:mb-2 text-2xl md:text-6xl font-bold">قهوه عربیکا تانزانیا</h2>
-                    <span class="text-xl md:text-5xl font-light">یک فنجان بالانس!</span>
+                    <h2 class="mb-0.5 md:mb-2 text-2xl  md:text-6xl md:leading-16 font-bold">قهوه عربیکا تانزانیا</h2>
+                    <span class="text-xl md:text-5xl/[62px] font-light">یک فنجان بالانس!</span>
                     <span class="block w-25 h-px md:h-0.5 my-3 md:my-8 bg-orange-300"></span>
-                    <p class="max-w-50.25 md:max-w-115 text-sm md:text-2xl">قطعا نام آشنای عربیکا را شنیده اید. عربیکا
+                    <p class="max-w-50.25 md:max-w-115 text-sm md:text-2xl md:leading-8">قطعا نام آشنای عربیکا را شنیده
+                        اید. عربیکا
                         یکی از گونه های قهوه است که در نواحی مختلف کمربند قهوه کشت میشود.</p>
                 </div>
+                <!-- Curve -->
+                <svg
+                    class="absolute -bottom-0.5 left-0 right-0 hidden md:block w-25 h-5.5 mx-auto text-gray-100 dark:text-zinc-800">
+                    <use href="#curve"></use>
+                </svg>
+                <!-- Circles -->
+                <div class="circle--main circle circle-lg hidden md:flex">
+                    <div class="circle circle-md">
+                        <div class="circle circle-sm">
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- Arrow Cricle -->
+            <div
+                class="absolute bottom-0 right-0 left-0 hidden md:flex items-center justify-center translate-y-1/2 mx-auto w-7.5 h-7.5 border-2 border-orange-300 bg-gray-100 dark:bg-zinc-800 dark:text-white rounded-full ">
+                <svg class="w-5 h-5">
+                    <use href="#chevron-down"></use>
+                </svg>
+            </div>
+            <div class=""></div>
         </section>
 
     </main>
