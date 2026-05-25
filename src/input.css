@@ -178,7 +178,6 @@
 
     .products {
         background: linear-gradient(rgba(243, 244, 246, 0.65), rgba(243, 244, 246, 0.65)), url('../images/body-bg.png');
-        height: 900px;
         background-repeat: no-repeat;
         background-size: 100%;
     }
@@ -203,10 +202,17 @@
         height: 1px;
         margin: auto;
     }
-
+}
+@utility category-banner__item1 {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 33.85%, rgba(243, 244, 246, 0.1) 100%), url("../images/categories/category-right.jpg");
+    background-size: cover;
 
 }
+@utility category-banner__item2 {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 33.85%, rgba(243, 244, 246, 0.1) 100%), url("../images/categories/category-left.jpg");
+    background-size: cover;
 
+}
 @custom-variant child (& > *);
 @custom-variant child-hover (& > *:hover);
 @custom-variant child-all (& *);
