@@ -60,3 +60,26 @@ function openCart() {
 
     overlay.classList.toggle("overlay--visible");
 }
+
+const swiper = new Swiper('.swiper', {
+    slidesPerView: 2,
+    spaceBetween: 14,
+    breakpoints: {
+        640: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 20
+        }
+    },
+    navigation: {
+        nextEl: '.swiper-button-next-custom',
+        prevEl: '.swiper-button-prev-custom'
+    }
+});

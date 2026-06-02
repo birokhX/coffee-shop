@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.2.4",
+    "swiper": "^12.2.0",
     "tailwind-extras": "^2.0.7"
   },
   "scripts": {
